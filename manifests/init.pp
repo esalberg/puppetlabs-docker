@@ -206,6 +206,10 @@
 #   Custom dns search domains
 #   Defaults to undefined
 #
+# [*set_socket_group*]
+#   Whether to set the unix control socket, versus assuming the default.
+#   Defaults to true
+#
 # [*socket_group*]
 #   Group ownership of the unix control socket.
 #   Defaults to undefined
@@ -431,6 +435,7 @@ class docker(
   Optional[String] $tmp_dir                                 = $docker::params::tmp_dir,
   Variant[String,Array,Undef] $dns                          = $docker::params::dns,
   Variant[String,Array,Undef] $dns_search                   = $docker::params::dns_search,
+  Optional[Boolean] $set_socket_group                       = $docker::params::set_socket_group,
   Optional[String] $socket_group                            = $docker::params::socket_group,
   Array $labels                                             = $docker::params::labels,
   Variant[String,Array,Undef] $extra_parameters             = undef,

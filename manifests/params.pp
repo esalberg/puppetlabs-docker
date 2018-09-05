@@ -54,7 +54,14 @@ class docker::params {
   $log_driver                        = undef
   $log_opt                           = []
   $selinux_enabled                   = undef
-  $socket_group_default              = 'docker'
+
+  $set_socket_group = $docker::set_socket_group
+  if $set_socket_group {
+    $socket_group_default              = 'docker'
+  } else {
+    $socket_group_default = undef
+  }
+
   $labels                            = []
   $service_state                     = running
   $service_enable                    = true

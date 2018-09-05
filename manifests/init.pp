@@ -222,6 +222,10 @@
 #   Custom dns search domains
 #   Defaults to undefined
 #
+# [*set_socket_group*]
+#   Whether to set the unix control socket, versus assuming the default.
+#   Defaults to true
+#
 # [*socket_group*]
 #   Group ownership of the unix control socket.
 #   Default is based on OS (docker, dockerroot, undef)
